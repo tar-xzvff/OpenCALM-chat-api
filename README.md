@@ -26,6 +26,7 @@ https://qiita.com/tar_xzvf/items/09ee2bf146c4a3319492
 git clone https://github.com/tar-xzvff/OpenCALM-chat-api.git
 cd OpenCALM-chat-api
 pip install -r requirements.txt
+python3 -c 'import torch; from transformers import AutoModelForCausalLM, AutoTokenizer; model = AutoModelForCausalLM.from_pretrained("cyberagent/open-calm-7b", device_map="auto", torch_dtype=torch.float16); model.save_pretrained("/home/ubuntu/model/cyberagent/open-calm-7"); tokenizer = AutoTokenizer.from_pretrained("cyberagent/open-calm-7b"); tokenizer.save_pretrained("/home/ubuntu/model/cyberagent/open-calm-7")'
 uvicorn main:app --reload --host 0.0.0.0
 ```
 
