@@ -16,11 +16,11 @@ if RUNNING_ON_GPU:
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     model = AutoModelForCausalLM.from_pretrained(
-        "cyberagent/open-calm-7b",
+        "/home/ubuntu/model/cyberagent/open-calm-7",
         device_map="auto",
         torch_dtype=torch.float16
     )
-    tokenizer = AutoTokenizer.from_pretrained("cyberagent/open-calm-7b")
+    tokenizer = AutoTokenizer.from_pretrained("/home/ubuntu/model/cyberagent/open-calm-7")
 
 
 def talk(message):
